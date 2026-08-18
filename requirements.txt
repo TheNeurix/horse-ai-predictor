@@ -1,5 +1,6 @@
-# Add project dependencies here
-numpy
 pandas
+numpy
 scikit-learn
-matplotlib
+duckdb
+pyyaml
+pytest

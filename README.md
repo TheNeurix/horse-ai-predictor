@@ -24,3 +24,10 @@ Legal & risk
 Notes
 - Python 3.12 is the target runtime for development and CI.
 - Only free and open-source libraries are used for MVP 0.1.
+
+Canonical Data Model
+- One row represents one horse in one race, uniquely identified by race_id + horse_id.
+- Pre-race features are the model inputs and must reflect only information known before the race starts.
+- Post-race results are outcomes and targets; they are stored for evaluation and training labels, not as model inputs.
+- Chronological data is required so historical form and validation are built in time order.
+- Future information must never be used to predict a past race.

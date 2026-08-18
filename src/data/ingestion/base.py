@@ -3,8 +3,23 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 
 import pandas as pd
+
+
+@dataclass(frozen=True)
+class SourceMetadata:
+    """Describes the capabilities of one racing data source adapter."""
+
+    source_name: str
+    source_type: str
+    country: str | None
+    racecourse: str | None
+    supports_results: bool
+    supports_trackwork: bool
+    supports_ratings: bool
+    supports_odds: bool
 
 
 class RacingDataSource(ABC):

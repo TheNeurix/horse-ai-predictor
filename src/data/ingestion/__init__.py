@@ -1,5 +1,12 @@
 """Ingestion utilities for raw horse-racing data sources."""
 
+from src.data.ingestion.adapters import (
+    SOURCE_REGISTRY,
+    GenericDataSource,
+    RCTCDataSource,
+    create_data_source,
+    get_source_registry,
+)
 from src.data.ingestion.base import RacingDataSource
 from src.data.ingestion.csv_loader import (
     CSVFileNotFoundError,
@@ -13,6 +20,7 @@ from src.data.ingestion.normalizer import (
     NormalizationError,
     identify_dataset_components,
     normalize_canonical_dataframe,
+    normalize_column_name,
     normalize_column_names,
     normalize_dataframe,
 )
@@ -22,12 +30,18 @@ __all__ = [
     "CSVLoaderError",
     "CSVMalformedError",
     "DatasetComponentPresence",
+    "GenericDataSource",
     "LocalCSVRacingDataSource",
     "NormalizationError",
+    "RCTCDataSource",
     "RacingDataSource",
+    "SOURCE_REGISTRY",
+    "create_data_source",
+    "get_source_registry",
     "identify_dataset_components",
     "load_csv_file",
     "normalize_canonical_dataframe",
+    "normalize_column_name",
     "normalize_column_names",
     "normalize_dataframe",
 ]

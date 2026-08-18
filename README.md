@@ -50,3 +50,10 @@ Processed Dataset
 - The canonical schema defines the one-horse-in-one-race structure expected by the rest of the system.
 - Validation enforces required columns, primary-key uniqueness, sane value ranges, and leakage protection.
 - Source-specific ingestion adapters will be added later for real racing data providers and export formats.
+
+Supported Data Sources
+- Source adapters isolate external data formats from the rest of the pipeline.
+- RCTC (Royal Calcutta Turf Club) is planned as the first official Indian racing source adapter.
+- Adapters will only collect data that is publicly accessible or otherwise legitimately available to the application.
+- Source-specific fields are normalized into the canonical schema before validation and downstream use.
+- The machine-learning layer must remain independent of the upstream source format.

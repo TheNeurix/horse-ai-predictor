@@ -31,3 +31,22 @@ Canonical Data Model
 - Post-race results are outcomes and targets; they are stored for evaluation and training labels, not as model inputs.
 - Chronological data is required so historical form and validation are built in time order.
 - Future information must never be used to predict a past race.
+
+Data Ingestion Architecture
+Raw source data
+  ↓
+Source Loader
+  ↓
+Normalizer
+  ↓
+Canonical Schema
+  ↓
+Validation
+  ↓
+Processed Dataset
+
+- Raw source files enter through a loader that understands a specific source format.
+- The normalizer standardizes column names, whitespace, missing values, dates, and numeric fields without inventing data.
+- The canonical schema defines the one-horse-in-one-race structure expected by the rest of the system.
+- Validation enforces required columns, primary-key uniqueness, sane value ranges, and leakage protection.
+- Source-specific ingestion adapters will be added later for real racing data providers and export formats.
